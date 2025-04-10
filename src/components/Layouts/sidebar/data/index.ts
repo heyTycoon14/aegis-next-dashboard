@@ -14,45 +14,45 @@ export const NAV_DATA = [
           },
         ],
       },
-      {
-        title: "Calendar",
-        url: "/calendar",
-        icon: Icons.Calendar,
-        items: [],
-      },
+      // {
+      //   title: "Calendar",
+      //   url: "/calendar",
+      //   icon: Icons.Calendar,
+      //   items: [],
+      // },
       {
         title: "Profile",
         url: "/profile",
         icon: Icons.User,
         items: [],
       },
+      // {
+      //   title: "Forms",
+      //   icon: Icons.Alphabet,
+      //   items: [
+      //     {
+      //       title: "Form Elements",
+      //       url: "/forms/form-elements",
+      //     },
+      //     {
+      //       title: "Form Layout",
+      //       url: "/forms/form-layout",
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: "Tables",
+      //   url: "/tables",
+      //   icon: Icons.Table,
+      //   items: [
+      //     {
+      //       title: "Tables",
+      //       url: "/tables",
+      //     },
+      //   ],
+      // },
       {
-        title: "Forms",
-        icon: Icons.Alphabet,
-        items: [
-          {
-            title: "Form Elements",
-            url: "/forms/form-elements",
-          },
-          {
-            title: "Form Layout",
-            url: "/forms/form-layout",
-          },
-        ],
-      },
-      {
-        title: "Tables",
-        url: "/tables",
-        icon: Icons.Table,
-        items: [
-          {
-            title: "Tables",
-            url: "/tables",
-          },
-        ],
-      },
-      {
-        title: "Pages",
+        title: "Products",
         icon: Icons.Alphabet,
         items: [
           {
@@ -76,30 +76,30 @@ export const NAV_DATA = [
           },
         ],
       },
-      {
-        title: "UI Elements",
-        icon: Icons.FourCircle,
-        items: [
-          {
-            title: "Alerts",
-            url: "/ui-elements/alerts",
-          },
-          {
-            title: "Buttons",
-            url: "/ui-elements/buttons",
-          },
-        ],
-      },
-      {
-        title: "Authentication",
-        icon: Icons.Authentication,
-        items: [
-          {
-            title: "Sign In",
-            url: "/auth/sign-in",
-          },
-        ],
-      },
+      // {
+      //   title: "UI Elements",
+      //   icon: Icons.FourCircle,
+      //   items: [
+      //     {
+      //       title: "Alerts",
+      //       url: "/ui-elements/alerts",
+      //     },
+      //     {
+      //       title: "Buttons",
+      //       url: "/ui-elements/buttons",
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: "Authentication",
+      //   icon: Icons.Authentication,
+      //   items: [
+      //     {
+      //       title: "Sign In",
+      //       url: "/auth/sign-in",
+      //     },
+      //   ],
+      // },
     ],
   },
 ];

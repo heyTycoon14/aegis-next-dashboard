@@ -6,7 +6,6 @@ import InputGroup from "../FormElements/InputGroup";
 import { Checkbox } from "../FormElements/checkbox";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { Alert } from "../ui-elements/alert";
 import { notify } from "@/utils/notifications";
 
 export default function SigninWithPassword() {

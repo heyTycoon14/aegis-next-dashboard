@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider defaultTheme="light" attribute="class">
+    <ThemeProvider defaultTheme="dark" attribute="class">
       <SessionProvider>
         <SidebarProvider>{children}</SidebarProvider>
       </SessionProvider>

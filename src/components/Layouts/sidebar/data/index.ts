@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import * as Icons from "../icons";
 
 export const NAV_DATA = [
@@ -16,28 +15,44 @@ export const NAV_DATA = [
         icon: Icons.FourCircle,
         items: [
           {
-            title: "Workspaces",
-            url: "/pages/settings",
+            title: "New Workspace",
+            url: "/workspaces/create",
           },
           {
-            title: "Settings",
-            url: "/pages/settings",
+            title: "Workspaces",
+            url: "/workspaces/list",
           },
         ],
       },
       {
         title: "Domains",
-        url: "/tables",
         icon: Icons.Table,
-        items: [],
+        items: [
+          {
+            title: "New Domain",
+            url: "/domain/create",
+          },
+          {
+            title: "Domains",
+            url: "/domain/list",
+          },
+        ],
       },
       {
         title: "Products",
         icon: Icons.Alphabet,
         items: [
           {
-            title: "Settings",
-            url: "/pages/settings",
+            title: "Supported Platforms",
+            url: "/products/platforms",
+          },
+          {
+            title: "All Products",
+            url: "/products/all",
+          },
+          {
+            title: "Sales Tracker",
+            url: "/products/sales",
           },
         ],
       },
@@ -48,17 +63,29 @@ export const NAV_DATA = [
     items: [
       {
         title: "Profile",
-        url: "/profile",
         icon: Icons.User,
-        items: [],
+        items: [
+          {
+            title: "User info",
+            url: "/profile",
+          },
+          {
+            title: "Setting",
+            url: "/profile/settings",
+          },
+        ],
       },
       {
         title: "Subscription",
         icon: Icons.PieChart,
         items: [
           {
-            title: "Basic Chart",
-            url: "/charts/basic-chart",
+            title: "Current Plan",
+            url: "/subscription/current-plan",
+          },
+          {
+            title: "Upgrade Subscription",
+            url: "/subscription/upgrade-subscription",
           },
         ],
       },
@@ -69,24 +96,20 @@ export const NAV_DATA = [
     items: [
       {
         title: "About Aegis",
-        url: "/profile",
-        icon: Icons.User,
+        url: "/about",
+        icon: Icons.ChevronUp,
         items: [],
       },
       {
         title: "How to use",
+        url: "/how-to-use",
         icon: Icons.PieChart,
-        items: [
-          {
-            title: "Basic Chart",
-            url: "/charts/basic-chart",
-          },
-        ],
+        items: [],
       },
       {
         title: "Contact Us",
         icon: Icons.ArrowLeftIcon,
-        url: "/forms/form-layout",
+        url: "/contact-us",
         items: [],
       },
     ],

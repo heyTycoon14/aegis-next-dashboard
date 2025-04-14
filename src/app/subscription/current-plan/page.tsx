@@ -1,11 +1,10 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { CampaignVisitors } from "@/components/Charts/campaign-visitors";
 import { UsedDevices } from "@/components/Charts/used-devices";
 import { createTimeFrameExtractor } from "@/utils/timeframe-extractor";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Basic Chart",
+  title: "Current Subscription",
 };
 
 type PropsType = {
@@ -20,7 +19,7 @@ export default function Page(props: PropsType) {
 
   return (
     <>
-      <Breadcrumb pageName="Basic Chart" />
+      <Breadcrumb pageName="Current Subscription" parentPage="Subscription" />
 
       <div className="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
         <UsedDevices
@@ -28,10 +27,6 @@ export default function Page(props: PropsType) {
           timeFrame={extractTimeFrame("used_devices")?.split(":")[1]}
           className="col-span-12 xl:col-span-5"
         />
-
-        <div className="col-span-12 xl:col-span-5">
-          <CampaignVisitors />
-        </div>
       </div>
     </>
   );

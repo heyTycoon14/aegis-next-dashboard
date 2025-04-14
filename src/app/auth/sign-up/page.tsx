@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function SignUp() {
   return (
     <>
-      <Breadcrumb pageName="Sign Up" />
+      <Breadcrumb pageName="Sign Up" parentPage="Home" />
 
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
         <div className="flex flex-wrap items-center">

@@ -6,25 +6,25 @@ import { useSession } from "next-auth/react";
 
 export function OverviewCardsGroup() {
   const { data: session } = useSession();
-  const subscription_insights = session?.userData.subscription_insights;
+  const subscription_insights = session?.userData?.subscription_insights;
   const domains = {
-    value: subscription_insights.domains.usage,
-    available: subscription_insights.domains.available,
+    value: subscription_insights.domains?.usage || 0,
+    available: subscription_insights.domains?.available || 0,
   };
 
   const redirects = {
-    value: subscription_insights.redirects.usage,
-    available: subscription_insights.redirects.available,
+    value: subscription_insights.redirects?.usage || 0,
+    available: subscription_insights.redirects?.available || 0,
   };
 
   const sales = {
-    value: subscription_insights.sales.usage,
-    available: subscription_insights.sales.available,
+    value: subscription_insights.sales?.usage || 0,
+    available: subscription_insights.sales?.available || 0,
   };
 
   const webhooks = {
-    value: subscription_insights.webhooks.usage,
-    available: subscription_insights.webhooks.available,
+    value: subscription_insights.webhooks?.usage || 0,
+    available: subscription_insights.webhooks?.available || 0,
   };
 
   return (

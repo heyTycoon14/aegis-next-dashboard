@@ -32,7 +32,7 @@ const HowToPage = () => {
             <h2 className="mb-2 text-lg font-semibold">Step 2: Log In</h2>
             <p className="mb-4 leading-relaxed">
               Use your registered email and password to log in to the dashboard.
-              If you forget your password, use the "Forgot Password" option to
+              If you forget your password, use the Forgot Password option to
               reset it.
             </p>
 

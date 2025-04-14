@@ -1,15 +1,18 @@
+"use client";
 import { PaymentsOverview } from "@/components/Charts/payments-overview";
 import { UsedDevices } from "@/components/Charts/used-devices";
 import { WeeksProfit } from "@/components/Charts/weeks-profit";
 import { TopChannels } from "@/components/Tables/top-channels";
 import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
 import { createTimeFrameExtractor } from "@/utils/timeframe-extractor";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 
 import { OverviewCardsSkeleton } from "./overview-cards/skeleton";
 import { OverviewCardsGroup } from "./overview-cards";
 import { RegionLabels } from "./region-labels";
 import { ChatsCard } from "./chats-card";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 type PropsType = {
   selectedTimeFrame?: string;
@@ -17,6 +20,14 @@ type PropsType = {
 
 export default function Home({ selectedTimeFrame }: PropsType) {
   const extractTimeFrame = createTimeFrameExtractor(selectedTimeFrame);
+
+  const session = useSession();
+  const router = useRouter();
+  useEffect(() => {
+    if (session.status == "unauthenticated") {
+      router.push("/auth/sign-in");
+    }
+  }, [session]);
 
   return (
     <>

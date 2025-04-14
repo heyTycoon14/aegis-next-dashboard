@@ -9,8 +9,8 @@ import {
 import Image from "next/image";
 import { getTopProducts } from "../fetch";
 
-export async function TopProducts() {
-  const data = await getTopProducts();
+export function TopProducts() {
+  const data = getTopProducts();
 
   return (
     <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">

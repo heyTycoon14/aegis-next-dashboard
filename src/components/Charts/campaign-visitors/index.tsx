@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import { getCampaignVisitorsData } from "@/services/charts.services";
 import { CampaignVisitorsChart } from "./chart";
 
-export async function CampaignVisitors({ className }: { className?: string }) {
-  const data = await getCampaignVisitorsData();
+export function CampaignVisitors({ className }: { className?: string }) {
+  const data = getCampaignVisitorsData();
 
   return (
     <div

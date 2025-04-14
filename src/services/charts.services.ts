@@ -1,9 +1,6 @@
-export async function getDevicesUsedData(
+export function getDevicesUsedData(
   timeFrame?: "monthly" | "yearly" | (string & {}),
 ) {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   const data = [
     {
       name: "Desktop",
@@ -37,12 +34,9 @@ export async function getDevicesUsedData(
   return data;
 }
 
-export async function getPaymentsOverviewData(
+export function getPaymentsOverviewData(
   timeFrame?: "monthly" | "yearly" | (string & {}),
 ) {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   if (timeFrame === "yearly") {
     return {
       received: [
@@ -94,10 +88,7 @@ export async function getPaymentsOverviewData(
   };
 }
 
-export async function getWeeksProfitData(timeFrame?: string) {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
+export function getWeeksProfitData(timeFrame?: string) {
   if (timeFrame === "last week") {
     return {
       sales: [
@@ -143,10 +134,7 @@ export async function getWeeksProfitData(timeFrame?: string) {
   };
 }
 
-export async function getCampaignVisitorsData() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
+export function getCampaignVisitorsData() {
   return {
     total_visitors: 784_000,
     performance: -1.5,
@@ -162,17 +150,14 @@ export async function getCampaignVisitorsData() {
   };
 }
 
-export async function getVisitorsAnalyticsData() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
+export function getVisitorsAnalyticsData() {
   return [
     168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 280, 112, 123, 212, 270,
     190, 310, 115, 90, 380, 112, 223, 292, 170, 290, 110, 115, 290, 380, 312,
   ].map((value, index) => ({ x: index + 1 + "", y: value }));
 }
 
-export async function getCostsPerInteractionData() {
+export function getCostsPerInteractionData() {
   return {
     avg_cost: 560.93,
     growth: 2.5,

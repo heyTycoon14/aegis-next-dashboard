@@ -9,11 +9,11 @@ type PropsType = {
   className?: string;
 };
 
-export async function PaymentsOverview({
+export function PaymentsOverview({
   timeFrame = "monthly",
   className,
 }: PropsType) {
-  const data = await getPaymentsOverviewData(timeFrame);
+  const data = getPaymentsOverviewData(timeFrame);
 
   return (
     <div

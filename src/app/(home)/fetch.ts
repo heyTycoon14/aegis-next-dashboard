@@ -1,7 +1,4 @@
-export async function getOverviewData() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
+export function getOverviewData() {
   return {
     views: {
       value: 3456,
@@ -22,9 +19,7 @@ export async function getOverviewData() {
   };
 }
 
-export async function getChatsData() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+export function getChatsData() {
 
   return [
     {

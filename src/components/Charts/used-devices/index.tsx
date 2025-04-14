@@ -8,11 +8,8 @@ type PropsType = {
   className?: string;
 };
 
-export async function UsedDevices({
-  timeFrame = "monthly",
-  className,
-}: PropsType) {
-  const data = await getDevicesUsedData(timeFrame);
+export function UsedDevices({ timeFrame = "monthly", className }: PropsType) {
+  const data = getDevicesUsedData(timeFrame);
 
   return (
     <div

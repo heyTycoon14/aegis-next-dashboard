@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 type PropsType = {
-  searchParams: Promise<{
+  searchParams: {
     selected_time_frame?: string;
-  }>;
+  };
 };
 
-export default async function Page(props: PropsType) {
-  const { selected_time_frame } = await props.searchParams;
+export default function Page(props: PropsType) {
+  const { selected_time_frame } = props.searchParams;
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 
   return (

@@ -1,9 +1,6 @@
 import * as logos from "@/assets/logos";
 
-export async function getTopProducts() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
+export function getTopProducts() {
   return [
     {
       image: "/images/product/product-01.png",
@@ -40,10 +37,7 @@ export async function getTopProducts() {
   ];
 }
 
-export async function getInvoiceTableData() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1400));
-
+export function getInvoiceTableData() {
   return [
     {
       name: "Free package",
@@ -72,10 +66,7 @@ export async function getInvoiceTableData() {
   ];
 }
 
-export async function getTopChannels() {
-  // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
+export function getTopChannels() {
   return [
     {
       name: "Google",

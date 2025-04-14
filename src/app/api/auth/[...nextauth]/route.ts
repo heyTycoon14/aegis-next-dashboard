@@ -11,7 +11,7 @@ declare module "next-auth/jwt" {
 }
 
 const nextAuthSecret =
-  process.env.NEXT_PUBLIC_NEXTAUTH_SECRET || "default-nextauth-secret";
+  process.env.NEXTAUTH_SECRET || "default-nextauth-secret";
 
 declare module "next-auth" {
   interface Session {

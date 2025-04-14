@@ -1,56 +1,36 @@
+import { url } from "inspector";
 import * as Icons from "../icons";
 
 export const NAV_DATA = [
   {
-    label: "MAIN MENU",
+    label: "Dashboard",
     items: [
       {
-        title: "Dashboard",
+        title: "Summary",
         icon: Icons.HomeIcon,
+        url: "/",
+        items: [],
+      },
+      {
+        title: "Workspaces",
+        icon: Icons.FourCircle,
         items: [
           {
-            title: "eCommerce",
-            url: "/",
+            title: "Workspaces",
+            url: "/pages/settings",
+          },
+          {
+            title: "Settings",
+            url: "/pages/settings",
           },
         ],
       },
-      // {
-      //   title: "Calendar",
-      //   url: "/calendar",
-      //   icon: Icons.Calendar,
-      //   items: [],
-      // },
       {
-        title: "Profile",
-        url: "/profile",
-        icon: Icons.User,
+        title: "Domains",
+        url: "/tables",
+        icon: Icons.Table,
         items: [],
       },
-      // {
-      //   title: "Forms",
-      //   icon: Icons.Alphabet,
-      //   items: [
-      //     {
-      //       title: "Form Elements",
-      //       url: "/forms/form-elements",
-      //     },
-      //     {
-      //       title: "Form Layout",
-      //       url: "/forms/form-layout",
-      //     },
-      //   ],
-      // },
-      // {
-      //   title: "Tables",
-      //   url: "/tables",
-      //   icon: Icons.Table,
-      //   items: [
-      //     {
-      //       title: "Tables",
-      //       url: "/tables",
-      //     },
-      //   ],
-      // },
       {
         title: "Products",
         icon: Icons.Alphabet,
@@ -64,10 +44,16 @@ export const NAV_DATA = [
     ],
   },
   {
-    label: "OTHERS",
+    label: "User Settings",
     items: [
       {
-        title: "Charts",
+        title: "Profile",
+        url: "/profile",
+        icon: Icons.User,
+        items: [],
+      },
+      {
+        title: "Subscription",
         icon: Icons.PieChart,
         items: [
           {
@@ -76,30 +62,33 @@ export const NAV_DATA = [
           },
         ],
       },
-      // {
-      //   title: "UI Elements",
-      //   icon: Icons.FourCircle,
-      //   items: [
-      //     {
-      //       title: "Alerts",
-      //       url: "/ui-elements/alerts",
-      //     },
-      //     {
-      //       title: "Buttons",
-      //       url: "/ui-elements/buttons",
-      //     },
-      //   ],
-      // },
-      // {
-      //   title: "Authentication",
-      //   icon: Icons.Authentication,
-      //   items: [
-      //     {
-      //       title: "Sign In",
-      //       url: "/auth/sign-in",
-      //     },
-      //   ],
-      // },
+    ],
+  },
+  {
+    label: "Help",
+    items: [
+      {
+        title: "About Aegis",
+        url: "/profile",
+        icon: Icons.User,
+        items: [],
+      },
+      {
+        title: "How to use",
+        icon: Icons.PieChart,
+        items: [
+          {
+            title: "Basic Chart",
+            url: "/charts/basic-chart",
+          },
+        ],
+      },
+      {
+        title: "Contact Us",
+        icon: Icons.ArrowLeftIcon,
+        url: "/forms/form-layout",
+        items: [],
+      },
     ],
   },
 ];

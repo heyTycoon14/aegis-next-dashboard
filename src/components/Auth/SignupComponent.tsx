@@ -6,6 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { notify } from "@/utils/notifications";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 // Custom CPF validator (basic version)
 function validateCPF(value: string) {
@@ -84,16 +85,8 @@ export default function SignupComponent() {
 
   return (
     <>
-      <div className="flex min-h-screen items-center justify-center bg-dark p-4">
+      <div className="flex min-h-screen items-center justify-center p-4">
         <div className="bg-dark-lighter w-full max-w-md rounded-2xl p-8 shadow-2xl">
-          <div className="mb-8 text-center">
-            <img
-              src="/images/blue-white-logo.png"
-              alt="Logo"
-              className="mx-auto mb-4 h-16 w-16"
-            />
-            <h1 className="text-2xl font-bold text-gray-100">Register</h1>
-          </div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Username */}
             <div>
@@ -133,7 +126,9 @@ export default function SignupComponent() {
             {/* First and Last Name */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="mb-2 block text-sm text-gray-400">First Name</label>
+                <label className="mb-2 block text-sm text-gray-400">
+                  First Name
+                </label>
                 <input
                   {...register("first_name")}
                   className={`w-full rounded-xl border bg-dark p-3 text-gray-200 ${
@@ -183,7 +178,9 @@ export default function SignupComponent() {
 
             {/* Password */}
             <div>
-              <label className="mb-2 block text-sm text-gray-400">Password</label>
+              <label className="mb-2 block text-sm text-gray-400">
+                Password
+              </label>
               <input
                 type="password"
                 {...register("password")}

@@ -39,7 +39,7 @@ const NewWorkspaceComponent = () => {
           notify({
             type: "Success",
             message: "Success",
-            description: "Successfully updated workspace details",
+            description: "Successfully created new workspace",
           });
           router.push("/workspaces/list");
         }

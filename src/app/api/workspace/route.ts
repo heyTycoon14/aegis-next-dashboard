@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from "axios";
-import type { NextApiRequest } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
 async function handler(req: NextRequest) {
@@ -9,7 +8,9 @@ async function handler(req: NextRequest) {
       const { data } = await axios.get(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/workspaces`,
         {
-          headers: Object.fromEntries(req.headers.entries()),
+          headers: {
+            Authorization: req.headers.get("Authorization") || "",
+          },
         },
       );
       const workspaces = data.data;

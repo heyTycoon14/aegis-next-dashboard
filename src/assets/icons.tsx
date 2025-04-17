@@ -220,6 +220,38 @@ export function TrashIcon(props: IconProps) {
   );
 }
 
+export function EditIcon(props: IconProps) {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="currentColor"
+      {...props}
+    >
+      <path
+        d="M12.146 2.146a1.5 1.5 0 0 1 2.121 0l1.586 1.586a1.5 1.5 0 0 1 0 2.121l-9.5 9.5a1.5 1.5 0 0 1-.707.394l-4 1a.5.5 0 0 1-.607-.607l1-4a1.5 1.5 0 0 1 .394-.707l9.5-9.5ZM13.5 3.207l-9.5 9.5-.707 2.828 2.828-.707 9.5-9.5a.5.5 0 0 0 0-.707L14.207 3.5a.5.5 0 0 0-.707 0ZM11.5 5.207l1.293 1.293-7.5 7.5L4 12.707l7.5-7.5Z"
+        fill=""
+      />
+    </svg>
+  );
+}
+
+export function ActivateDeactivateIcon(props: IconProps) {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M10 1.667C5.397 1.667 1.667 5.397 1.667 10S5.397 18.333 10 18.333 18.333 14.603 18.333 10 14.603 1.667 10 1.667ZM10 16.667C6.318 16.667 3.333 13.682 3.333 10S6.318 3.333 10 3.333 16.667 6.318 16.667 10 13.682 16.667 10 16.667Z" />
+      <path d="M10 5.833C9.632 5.833 9.333 6.132 9.333 6.5V10C9.333 10.368 9.632 10.667 10 10.667H13.5C13.868 10.667 14.167 10.368 14.167 10C14.167 9.632 13.868 9.333 13.5 9.333H10.667V6.5C10.667 6.132 10.368 5.833 10 5.833Z" />
+    </svg>
+  );
+}
+
 export function MessageOutlineIcon(props: IconProps) {
   return (
     <svg

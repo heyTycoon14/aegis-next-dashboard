@@ -119,21 +119,21 @@ export default function Page() {
             <div className="mx-auto mb-5.5 mt-5 grid max-w-[370px] grid-cols-3 rounded-[5px] border border-stroke py-[9px] shadow-1 dark:border-dark-3 dark:bg-dark-2 dark:shadow-card">
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-dark-3 xsm:flex-row">
                 <span className="font-medium text-dark dark:text-white">
-                  259
+                  {session?.userData.subscription_insights.domains.usage}
                 </span>
-                <span className="text-body-sm">Posts</span>
+                <span className="text-body-sm">Domains</span>
               </div>
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-dark-3 xsm:flex-row">
                 <span className="font-medium text-dark dark:text-white">
-                  129K
+                  {session?.userData.subscription_insights.sales.usage}
                 </span>
-                <span className="text-body-sm">Followers</span>
+                <span className="text-body-sm">Sales</span>
               </div>
               <div className="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
                 <span className="font-medium text-dark dark:text-white">
-                  2K
+                  {session?.userData.subscription_insights.redirects.usage}
                 </span>
-                <span className="text-body-sm-sm">Following</span>
+                <span className="text-body-sm-sm">Redirects</span>
               </div>
             </div>
 

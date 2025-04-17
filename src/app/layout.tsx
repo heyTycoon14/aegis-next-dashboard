@@ -23,6 +23,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <Providers>
           <NotificationList />

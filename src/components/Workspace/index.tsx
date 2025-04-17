@@ -191,116 +191,123 @@ const WorkspacesComponent = () => {
             </TableRow>
           </TableHeader>
 
-          <TableBody>
-            {workspaces.length &&
-              workspaces.map((item, index) => (
-                <TableRow
-                  key={index}
-                  className="border-[#eee] dark:border-dark-3"
-                >
-                  <TableCell className="min-w-[20px] xl:pl-7.5">
-                    <h5 className="text-dark dark:text-white">{item.id}</h5>
-                  </TableCell>
+          {
+            <TableBody>
+              {workspaces.length ? (
+                workspaces.map((item, index) => (
+                  <TableRow
+                    key={index}
+                    className="border-[#eee] dark:border-dark-3"
+                  >
+                    <TableCell className="min-w-[20px] xl:pl-7.5">
+                      <h5 className="text-dark dark:text-white">{item.id}</h5>
+                    </TableCell>
 
-                  <TableCell className="min-w-[155px] xl:pl-7.5">
-                    <h5 className="text-dark dark:text-white">{item.name}</h5>
-                  </TableCell>
+                    <TableCell className="min-w-[155px] xl:pl-7.5">
+                      <h5 className="text-dark dark:text-white">{item.name}</h5>
+                    </TableCell>
 
-                  <TableCell className="min-w-[155px] xl:pl-7.5">
-                    <h5 className="text-dark dark:text-white">{item.slug}</h5>
-                  </TableCell>
+                    <TableCell className="min-w-[155px] xl:pl-7.5">
+                      <h5 className="text-dark dark:text-white">{item.slug}</h5>
+                    </TableCell>
 
-                  <TableCell>
-                    <p className="text-dark dark:text-white">
-                      {dayjs(item.created_at).format("MMM DD, YYYY")}
-                    </p>
-                  </TableCell>
+                    <TableCell>
+                      <p className="text-dark dark:text-white">
+                        {dayjs(item.created_at).format("MMM DD, YYYY")}
+                      </p>
+                    </TableCell>
 
-                  <TableCell>
-                    <p className="text-dark dark:text-white">
-                      {dayjs(item.updated_at).format("MMM DD, YYYY")}
-                    </p>
-                  </TableCell>
+                    <TableCell>
+                      <p className="text-dark dark:text-white">
+                        {dayjs(item.updated_at).format("MMM DD, YYYY")}
+                      </p>
+                    </TableCell>
 
-                  <TableCell>
-                    <div
-                      className={cn(
-                        "max-w-fit rounded-full px-3.5 py-1 text-sm font-medium",
-                        {
-                          "bg-[#219653]/[0.08] text-[#219653]":
-                            item.is_disabled === 1,
-                          "bg-[#D34053]/[0.08] text-[#D34053]":
-                            item.is_disabled === 0,
-                          // "bg-[#FFA70B]/[0.08] text-[#FFA70B]":
-                          //   item.status === "Pending",
-                        },
-                      )}
-                    >
-                      {item.is_disabled ? "Yes" : "No"}
-                    </div>
-                  </TableCell>
-
-                  <TableCell>
-                    <div
-                      className={cn(
-                        "max-w-fit rounded-full px-3.5 py-1 text-sm font-medium",
-                        {
-                          "bg-[#219653]/[0.08] text-[#219653]":
-                            item.is_removed === 1,
-                          // "bg-[#D34053]/[0.08] text-[#D34053]":
-                          //   item.is_removed === 0,
-                          "bg-[#FFA70B]/[0.08] text-[#FFA70B]":
-                            item.is_removed === 0,
-                        },
-                      )}
-                    >
-                      {item.is_removed ? "Yes" : "No"}
-                    </div>
-                  </TableCell>
-
-                  <TableCell className="xl:pr-7.5">
-                    <div className="flex items-center justify-end gap-x-3.5">
-                      <button
-                        className="hover:text-primary"
-                        onClick={() => {
-                          setSelectedWorkspace(item);
-                          setData({
-                            name: item.name,
-                            slug: item.slug,
-                          });
-                          setIsEditOpen(true);
-                        }}
+                    <TableCell>
+                      <div
+                        className={cn(
+                          "max-w-fit rounded-full px-3.5 py-1 text-sm font-medium",
+                          {
+                            "bg-[#219653]/[0.08] text-[#219653]":
+                              item.is_disabled === 1,
+                            "bg-[#D34053]/[0.08] text-[#D34053]":
+                              item.is_disabled === 0,
+                            // "bg-[#FFA70B]/[0.08] text-[#FFA70B]":
+                            //   item.status === "Pending",
+                          },
+                        )}
                       >
-                        <span className="sr-only">Edit Workspace</span>
-                        <EditIcon />
-                      </button>
+                        {item.is_disabled ? "Yes" : "No"}
+                      </div>
+                    </TableCell>
 
-                      <button
-                        className="hover:text-primary"
-                        onClick={() => handleTogggle(index)}
+                    <TableCell>
+                      <div
+                        className={cn(
+                          "max-w-fit rounded-full px-3.5 py-1 text-sm font-medium",
+                          {
+                            "bg-[#219653]/[0.08] text-[#219653]":
+                              item.is_removed === 1,
+                            // "bg-[#D34053]/[0.08] text-[#D34053]":
+                            //   item.is_removed === 0,
+                            "bg-[#FFA70B]/[0.08] text-[#FFA70B]":
+                              item.is_removed === 0,
+                          },
+                        )}
                       >
-                        <span className="sr-only">
-                          Activate/Deactivate Workspace
-                        </span>
-                        <ActivateDeactivateIcon />
-                      </button>
+                        {item.is_removed ? "Yes" : "No"}
+                      </div>
+                    </TableCell>
 
-                      <button
-                        className="hover:text-primary"
-                        disabled={item.is_disabled == 1}
-                        onClick={() => {
-                          setWorkspaceToDelete(item.id);
-                          setIsDeleteConfirmOpen(true);
-                        }}
-                      >
-                        <span className="sr-only">Remove Workspace</span>
-                        <TrashIcon />
-                      </button>
-                    </div>
-                  </TableCell>
+                    <TableCell className="xl:pr-7.5">
+                      <div className="flex items-center justify-end gap-x-3.5">
+                        <button
+                          className="hover:text-primary"
+                          onClick={() => {
+                            setSelectedWorkspace(item);
+                            setData({
+                              name: item.name,
+                              slug: item.slug,
+                            });
+                            setIsEditOpen(true);
+                          }}
+                        >
+                          <span className="sr-only">Edit Workspace</span>
+                          <EditIcon />
+                        </button>
+
+                        <button
+                          className="hover:text-primary"
+                          onClick={() => handleTogggle(index)}
+                        >
+                          <span className="sr-only">
+                            Activate/Deactivate Workspace
+                          </span>
+                          <ActivateDeactivateIcon />
+                        </button>
+
+                        <button
+                          className="hover:text-primary"
+                          disabled={item.is_disabled == 1}
+                          onClick={() => {
+                            setWorkspaceToDelete(item.id);
+                            setIsDeleteConfirmOpen(true);
+                          }}
+                        >
+                          <span className="sr-only">Remove Workspace</span>
+                          <TrashIcon />
+                        </button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow className="flex border-[#eee] dark:border-dark-3">
+                  <TableCell>No workspaces</TableCell>
                 </TableRow>
-              ))}
-          </TableBody>
+              )}
+            </TableBody>
+          }
         </Table>
       </div>
 

@@ -16,8 +16,10 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import InputGroup from "../FormElements/InputGroup";
 import { notify } from "@/utils/notifications";
+import { useRouter } from "next/navigation";
 
 const WorkspacesComponent = () => {
+  const router = useRouter();
   const [data, setData] = useState({
     name: "",
     slug: "",
@@ -44,7 +46,7 @@ const WorkspacesComponent = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setWorkspaces(data.workspaces);
+        if (data.workspaces) setWorkspaces(data.workspaces);
         setLoading(false);
       })
       .catch((error) => {
@@ -199,11 +201,17 @@ const WorkspacesComponent = () => {
                     key={index}
                     className="border-[#eee] dark:border-dark-3"
                   >
-                    <TableCell className="min-w-[20px] xl:pl-7.5">
+                    <TableCell
+                      className="min-w-[20px] hover:cursor-pointer xl:pl-7.5"
+                      onClick={() => router.push(`/workspaces/${item.id}`)}
+                    >
                       <h5 className="text-dark dark:text-white">{item.id}</h5>
                     </TableCell>
 
-                    <TableCell className="min-w-[155px] xl:pl-7.5">
+                    <TableCell
+                      className="min-w-[155px] hover:cursor-pointer xl:pl-7.5"
+                      onClick={() => router.push(`/workspaces/${item.id}`)}
+                    >
                       <h5 className="text-dark dark:text-white">{item.name}</h5>
                     </TableCell>
 
